@@ -1,0 +1,135 @@
+<template>
+<lightning-card variant="Narrow"  title="Home" icon-name="standard:agent_home">
+    <lightning-button-menu variant="Narrow" label="Create" title="Create Menu"  slot="actions" class="slds-p-around_small">
+        <lightning-menu-item label="User"> </lightning-menu-item>
+        <lightning-menu-item label="Multiple Object"> </lightning-menu-item>
+        <lightning-menu-item label="Custom Object"> </lightning-menu-item>
+        <lightning-menu-item label="Custom tab"> </lightning-menu-item>
+        <lightning-menu-item label="Email template"> </lightning-menu-item>
+        <lightning-menu-item label="Flows"> </lightning-menu-item>
+    </lightning-button-menu>
+</lightning-card>
+<lightning-card variant="Narrow" title="Salesforce Advanced Code Searcher">
+  <i class="fa fa-twitter slds-m-left_medium" aria-hidden="true"></i>
+<lightning-button-group class="slds-m-left_medium">
+  <lightning-button label="SEARCH CODE"></lightning-button>
+  <lightning-button label="CODE COVERAGE"></lightning-button>
+  <lightning-button label="STATIC CODE ANALYSIS (NEW)"></lightning-button>
+</lightning-button-group>  
+<h1 class="slds-border_bottom slds-grid"></h1>
+<lightning-input type="text" variant="standard"  placeholder="Enter Search Text..." style="width:20%;" class="slds-m-left_medium slds-m-bottom_medium slds-col slds-size_1-of-2 slds-col slds-size_1-of-3"> </lightning-input>
+<lightning-button class="slds-col slds-size_1-of-2 slds-m-vertical_large slds-m-left_large slds-m-bottom_large slds-border_bottom" variant="brand" label="Go" onclick={handleClick} ></lightning-button>
+<ul class=" slds-col slds-size_1-of-2 slds-m-left_large slds-m-top_medium slds-list_horizontal slds-has-dividers_right ">
+  <li><lightning-input type="checkbox" variant="standard" value="option1" label="class"></lightning-input> </li>
+  <li><lightning-input type="checkbox" variant="standard" value="option2" label="Page"></lightning-input></li>
+  <li><lightning-input type="checkbox" variant="standard" value="option3" label="Trigger"></lightning-input></li>
+  <li><lightning-input type="checkbox" variant="standard" value="option4" label="VF Comp"></lightning-input></li>
+  <li><lightning-input type="checkbox" variant="standard" value="option5" label="Lightning Components"></lightning-input></li>
+</ul> 
+</lightning-card>
+<lightning-layout-item padding="around-small" size="12">
+<lightning-layout>
+<lightning-layout-item padding="around-small" size="4">
+<div class="page-section page-right">
+<lightning-card>    
+<article class="slds-card">
+  <div class="slds-grid slds-einstein-header slds-card__header">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-utility-salesforce1">
+            <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#salesforce1"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-truncate" title="Einstein (10+)">
+            <a href="#" class="slds-card__header-link" title="Einstein (10+)">
+              <span class="slds-text-heading_small">Einstein (10+)</span>
+            </a>
+          </h2>
+        </div>
+      </div>
+      <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+    </header>
+  </div>
+  <div class="slds-card__body slds-card__body_inner">Card Body</div>
+  <footer class="slds-card__footer">
+    <a class="slds-card__footer-action" href="#">View All
+    </a>
+  </footer>
+</article>     
+</lightning-card>
+</div>
+</lightning-layout-item>
+    <lightning-layout-item padding="around-small" size="4">
+    <div class="page-section page-main">
+<lightning-card>  
+<article class="slds-card">
+  <div class="slds-grid slds-einstein-header slds-card__header">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-utility-salesforce1">
+            <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#salesforce1"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-truncate" title="Einstein (10+)">
+            <a href="#" class="slds-card__header-link" title="Einstein (10+)">
+              <span class="slds-text-heading_small">Einstein (10+)</span>
+            </a>
+          </h2>
+        </div>
+      </div>
+      <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+    </header>
+  </div>
+  <div class="slds-card__body slds-card__body_inner">Card Body</div>
+  <footer class="slds-card__footer">
+    <a class="slds-card__footer-action" href="#">View All
+    </a>
+  </footer>
+</article>    
+</lightning-card>
+</div>
+</lightning-layout-item>
+<lightning-layout-item padding="around-small" size="4">
+ <div class="page-section page-right">
+<lightning-card>             
+<article class="slds-card">
+  <div class="slds-grid slds-einstein-header slds-card__header">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-utility-salesforce1">
+            <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#salesforce1"></use>
+            </svg>
+          </span>
+        </div>
+    <div class="slds-media__body">
+        <h2 class="slds-truncate" title="Einstein (10+)">
+        <a href="#" class="slds-card__header-link" title="Einstein (10+)">
+        <span class="slds-text-heading_small">Einstein (10+)</span>
+        </a>
+          </h2>
+        </div>
+      </div>
+      <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+    </header>
+  </div>
+  <div class="slds-card__body slds-card__body_inner">Card Body</div>
+  <footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View All</a>
+</footer>
+</article>     
+</lightning-card>
+</div>
+</lightning-layout-item>
+</lightning-layout>
+</lightning-layout-item>  
+</template>

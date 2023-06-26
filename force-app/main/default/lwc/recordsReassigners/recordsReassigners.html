@@ -1,0 +1,76 @@
+<template>
+<lightning-card variant="Narrow"  title="Reassign Deactivated users" icon-name="standard:opportunity" >
+<lightning-combobox style="width:300px" class="slds-m-left_large" 
+  label="Select User"
+  placeholder="Select User"
+  options={deactivatedUsers}
+  onchange={handleDectUserChange}
+  >
+  </lightning-combobox>
+
+  <lightning-combobox style="width:300px" class="slds-m-left_large"
+  label="sObjects"
+  placeholder="Select sObjects"
+  options={allSobjects}
+  onchange={handlesObjChange}
+   >
+  </lightning-combobox>
+<div class="slds-m-top_medium">
+<lightning-button class="slds-m-left_large slds-m-bottom_large" variant="brand-outline" label="Search" title="search" disabled={disableSearchButton} onclick={getSearchUser} > 
+</lightning-button>
+<lightning-button class="slds-m-left_large" variant="brand" label="Reassign" title="Reassign" slot="actions" disabled={disableReassignButton} onclick={openModal} ></lightning-button>
+</div>
+<div style="height:200px; width: 800px;" class="slds-m-top_medium"> 
+  <lightning-datatable 
+    key-field="id"
+    data={fetchedRecords}
+    columns={columns}
+    onrowselection = {handleChangeOnReassign}
+    >
+</lightning-datatable>
+
+<div if:true={spinnerStatus} class="slds-spinner_inline spinner-padding">
+  <section class = "slds-modal slds-fade-in-open">
+  <lightning-spinner variant="brand" alternative-text="Loading Cases" size="medium">
+  </lightning-spinner>
+</section>
+<div class="slds-backdrop slds-backdrop_open"> </div>
+</div>
+</div>
+
+</lightning-card>
+
+<template if:true={isModalOpen} >
+<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+<div class="slds-modal__container">
+<header class="slds-modal__header">
+<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+<lightning-icon icon-name="utility:close"
+alternative-text="close"
+variant="inverse"
+size="small" ></lightning-icon>
+<span class="slds-assistive-text">Close</span>
+</button>
+<h2 class="slds-text-heading_medium slds-hyphenate">Activated User List</h2>
+</header>
+<div class="slds-modal__content">
+<div class="slds-p-around_small">
+<lightning-combobox style="width:300px" class="slds-m-left_large" 
+  label="Select User"
+  placeholder="Select User"
+  options={activatedUsers}
+  onchange={handleActUserChange}
+  >
+  </lightning-combobox> 
+<div class="slds-m-top_large">
+<lightning-button variant="success" type="submit" label="Reassign" class="slds-p-around_x-small" disabled={disableActReassign} onclick={getReassignActUser} > </lightning-button>
+<lightning-button variant="destructive" type="Cancel" label="Cancel" onclick={closeModal} class="slds-p-around_x-small"> 
+</lightning-button>
+</div>
+</div>
+</div>
+</div> 
+</section> 
+<div class="slds-backdrop slds-backdrop_open"> </div>
+</template>
+</template>

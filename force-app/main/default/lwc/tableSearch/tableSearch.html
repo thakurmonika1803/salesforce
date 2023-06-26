@@ -1,0 +1,21 @@
+<template>
+<lightning-card title="Custom Contact Search">
+    <lightning-layout multiple-rows="true" vertical-align="end">
+         <lightning-layout-item size="4" padding="around-small"> 
+    <!--Input text to Search Contact-->
+        <lightning-input type="text" label="Enter Contact Name To Search"
+            value={searchKey}   
+            onchange={handelSearchKey}> 
+        </lightning-input>
+         </lightning-layout-item> 
+<lightning-layout-item size="12" padding="around-small">         
+<lightning-datatable
+        key-field="id"
+        data= {Contact}
+        columns={columns}
+        >
+   </lightning-datatable>
+  </lightning-layout-item>
+ </lightning-layout>
+</lightning-card>
+</template>

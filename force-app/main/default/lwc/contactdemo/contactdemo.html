@@ -1,0 +1,21 @@
+<template>
+<lightning-card  variant="Narrow"  title="Registration form" height="50px" >
+    <div class="slds-p-horizontal_small">
+       <div> 
+        <lightning-input type="text" label="FirstName" value={fName} onkeydown={handleChange} ></lightning-input>
+    </div>
+    <div>
+        <lightning-input type="text" label="LastName" disabled={disableField} ></lightning-input>
+    </div>
+    <div>
+        <lightning-input required class="requiredField" type="text" label="Phone" ></lightning-input>
+    </div>
+    <div>
+        <lightning-input required class="requiredField" type="text" label="Email" ></lightning-input>
+    </div>
+    </div> 
+    <div>
+    <lightning-button class="slds-m-around_medium slds-align_absolute-center" slot="footer" variant="narrow" label="Submit" title="Submit" ></lightning-button>
+    </div>
+    </lightning-card>
+</template>

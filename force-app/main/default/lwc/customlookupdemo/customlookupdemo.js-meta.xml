@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="objectApiName" type="String" label="Api Name of object"></property>
+            <property name="firstFieldApiName" type="String" label="Api Name of the first field"></property>
+			<property name="secondFieldApiName" type="String" label="Api Name of the second field"></property>
+            <property name="thirdFieldApiName" type="String" label="Api Name of the third field"></property>
+			<property name="selectedValue1" type="String" label="Output of the first field" role="outputOnly" ></property>
+			<property name="selectedValue2" type="String" label="Output of the second field" role="outputOnly"></property>
+			<property name="selectedValue3" type="String" label="Output of the third field" role="outputOnly"></property>
+        </targetConfig>
+	</targetConfigs>	
+</LightningComponentBundle>

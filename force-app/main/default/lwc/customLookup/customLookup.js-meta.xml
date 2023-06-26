@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<targets>
+		<target>lightning__RecordPage</target>
+		<target>lightning__AppPage</target>
+		<target>lightning__HomePage</target>
+		<target>lightning__Tab</target>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="objectApiName" type="String" label="Api Name of object"></property>
+            <property name="firstFieldApiName" type="String" label="Api Name of the first field"></property>
+			<property name="secondFieldApiName" type="String" label="Api Name of the second field"></property>
+            <property name="thirdFieldApiName" type="String" label="Api Name of the third field"></property>
+        </targetConfig>
+	</targetConfigs>
+
+</LightningComponentBundle>

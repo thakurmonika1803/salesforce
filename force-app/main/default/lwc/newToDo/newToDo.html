@@ -1,0 +1,92 @@
+<template>
+<lightning-card  variant="success" title={greetings} >
+<lightning-button variant="Narrow" label="New" slot="actions" onclick={openModal}></lightning-button> 
+<h1 class="slds-m-Top_small slds-align_absolute-center cols"><b>ToDo List({data.length}) </b></h1>
+<div style="height:180px;">
+<lightning-datatable  
+key-field="id"
+data= {data}
+columns={columns} 
+onrowaction ={handleRowAction}
+>
+</lightning-datatable> 
+</div>
+</lightning-card>
+
+<template if:true={isModalOpen}>
+<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+
+<div class="slds-modal__container">
+<header class="slds-modal__header">
+<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+<lightning-icon icon-name="utility:close"
+alternative-text="close"
+variant="inverse"
+size="small" ></lightning-icon>
+<span class="slds-assistive-text">Close</span>
+</button>
+<h2 class="slds-text-heading_medium slds-hyphenate">New ToDo</h2>
+</header>
+
+<div class="slds-modal__content">
+<div class="slds-p-around_small">
+<lightning-record-edit-form object-api-name={objectAPIName} onsuccess={submitDetails} >
+<lightning-messages></lightning-messages>
+<lightning-input-field field-name="Name" required> </lightning-input-field>
+<lightning-input-field field-name="ToDo_Description__c" required > </lightning-input-field>
+<lightning-input-field field-name="ToDo_Start_Time__c" required>                                 
+</lightning-input-field> 
+<lightning-input-field field-name="ToDo_End_Time__c" required>                                 
+</lightning-input-field>
+<lightning-input-field field-name="ToDo_Dependency__c" >                                 
+</lightning-input-field>
+<lightning-input-field field-name="Status__c">                                 
+</lightning-input-field>
+<lightning-button variant="brand" type="submit" label="Save" class="slds-p-around_x-small"> </lightning-button>
+<lightning-button variant="brand" type="Cancel" label="Cancel" onclick={closeModal} class="slds-p-around_x-small"> 
+</lightning-button>
+</lightning-record-edit-form>
+</div>
+</div>
+
+</div> 
+</section> 
+<div class="slds-backdrop slds-backdrop_open"> </div>
+</template>
+
+<template if:true={openEditPage}>
+<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+<div class="slds-modal__container">
+<header class="slds-modal__header">
+<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCancel}>
+<lightning-icon icon-name="utility:close"
+alternative-text="close"
+variant="inverse"
+size="small" ></lightning-icon>
+<span class="slds-assistive-text">Close</span>
+</button>
+<h2 class="slds-text-heading_medium slds-hyphenate">Edit ToDo</h2>
+</header>
+
+<div class="slds-modal__content">
+<div class="slds-p-around_small">
+<lightning-record-edit-form object-api-name={objectAPIName} record-id={currentRecordEdit} onsuccess ={handleEditFormSuccess} >
+<lightning-messages></lightning-messages>
+<lightning-input-field field-name="Name"> </lightning-input-field>
+<lightning-input-field field-name="ToDo_Description__c" > </lightning-input-field>
+<lightning-input-field field-name="ToDo_End_Time__c">                                    
+</lightning-input-field>
+<lightning-input-field field-name="Status__c">                                    
+</lightning-input-field>
+<lightning-button variant="brand" type="submit" label="Save" onclick={submitDetails} class="slds-p-around_x-small"> </lightning-button>
+<lightning-button variant="brand" type="Cancel" label="Cancel" onclick={handleCancel} class="slds-p-around_x-small"> 
+</lightning-button>
+</lightning-record-edit-form>
+</div>
+</div>
+
+</div> 
+</section>
+<div class="slds-backdrop slds-backdrop_open"> </div>
+</template>
+</template>

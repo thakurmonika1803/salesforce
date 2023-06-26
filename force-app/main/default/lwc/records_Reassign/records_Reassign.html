@@ -1,0 +1,67 @@
+<template>
+    <lightning-card  title="Records Reassign" style="background-color:DodgerBlue;">
+    <lightning-button label="Search" variant="brand" slot="actions"  
+      disabled={disableSearchValue} onclick={getALLData}  class="slds-p-right_large"> </lightning-button>
+    <lightning-button label="Reassign" variant="success" slot="actions" 
+      disabled={disableReassignValue} onclick={handleReassignButtonEvent} class="slds-p-right_large"></lightning-button>
+     <lightning-combobox
+            style="width:300px"
+            options = {data1}
+            label="Deactivated Users"
+            placeholder="Select User"
+            value={selectedUser}
+            onchange={handleUseronchange}
+             ></lightning-combobox>
+            <lightning-combobox
+            style="width:300px"
+            options = {data2}
+            label="Sobjects"
+            value={selectedObject}
+            placeholder="Select Progress"
+            onchange={handleObjectonchange}
+             ></lightning-combobox>
+             <div style="height: 122px;">
+               <lightning-datatable
+               key-field="id"
+               data={data}
+               columns={columns}
+               value ={selectedRows}
+               onrowselection ={handleRowonchange}>
+               </lightning-datatable>
+               </div>
+</lightning-card>
+
+<template if:true={showModal}>
+    <section aria-modal="true" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container ">
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_small">Records Reassign</h2>
+                <lightning-icon class="slds-modal__close" icon-name="utility:close" size="small" onclick={closeModal}></lightning-icon> 
+            </header>
+            <div class="slds-modal__content">
+                <div class="slds-p-around_small">
+                    <lightning-combobox
+                    style="width:300px"
+                    options= {ActiveUser}
+                    label="Activated Users"
+                    placeholder="Select User"
+                    value={selectedActiveUser}
+                    onchange={handleActiveUserOnchange}
+                    ></lightning-combobox>
+
+    
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+
+                
+                <lightning-button variant="brand" label="Submit" onclick={handleReassignRecordsEvent} class="slds-p-around_x-small"></lightning-button>
+                <lightning-button variant="brand" label="Cancel" onclick={closeModal} class="slds-p-around_x-small"></lightning-button>
+                
+            </footer> 
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    
+</template>
+</template>
